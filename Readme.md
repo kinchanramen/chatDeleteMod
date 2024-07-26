@@ -20,7 +20,10 @@
   リスト内の文字列を**すべて**削除する。
 
 ## 設定
+Mod Menu経由でconfigを開ける。
 - CensoredWords: `>`を押すとリスト内の文字列を閲覧・編集できる。`+`で追加する。追加するための入力欄が既存の文字列の下に表示される。文字列を選択した状態で`-`を押すことで削除する
+  ![2024-07-26_13 44 10](https://github.com/user-attachments/assets/11cb08a8-f92f-497c-a707-7497ad0ea96f)
+
 
 ## コントリビューション
 バグ報告や機能追加の提案は、[Issues](https://github.com/kinchanramen/chatDeleteMod/issues)で行ってください。コードの貢献は、[Pull Requests](https://github.com/kinchanramen/chatDeleteMod/pulls)を通じて行っていただけます。
