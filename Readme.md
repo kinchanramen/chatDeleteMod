@@ -4,12 +4,6 @@
 このmodは指定した文字列を含むチャットを表示させなくするmodである。文字列はコマンドまたはGUIから追加・削除が可能である。
 
 
-
-## 機能
-- 機能1: 詳細説明
-- 機能2: 詳細説明
-- 機能3: 詳細説明
-
 ## 依存関係
 1. modのバージョンに`ClothConfig`を含むものは[Cloth Config API](https://modrinth.com/mod/cloth-config)が必要である。
 2. [Mod Menu](https://modrinth.com/mod/modmenu)が必要。
