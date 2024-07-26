@@ -1,6 +1,7 @@
 package net.kinchanramen.github.chatdeletemod.mixin;
 
 import net.kinchanramen.github.chatdeletemod.ChatDeleteModConfig;
+import net.kinchanramen.github.chatdeletemod.MessageFilter;
 import net.minecraft.client.gui.hud.ChatHud;
 import net.minecraft.client.gui.hud.MessageIndicator;
 import net.minecraft.network.message.MessageSignatureData;
@@ -20,7 +21,7 @@ public class chatMixin {
         String messageString = message.getString();
 
         // "Added censored word: " で始まるメッセージを許可
-        if (messageString.startsWith("Added censored word: ")||messageString.startsWith("Word already in censored list: ")||messageString.startsWith("Censored words: ")) {
+        if (MessageFilter.shouldIgnore(messageString)) {
             return; // 処理をキャンセルせずにメッセージを表示
         }
 

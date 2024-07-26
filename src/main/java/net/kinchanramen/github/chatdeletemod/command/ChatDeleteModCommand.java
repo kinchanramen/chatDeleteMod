@@ -1,25 +1,14 @@
 package net.kinchanramen.github.chatdeletemod.command;
 
 import com.mojang.brigadier.CommandDispatcher;
-import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
-import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 import net.kinchanramen.github.chatdeletemod.ChatDeleteModConfig;
-import net.minecraft.client.network.ClientCommandSource;
-import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.command.argument.TextArgumentType;
-import net.minecraft.server.command.CommandManager;
 import net.minecraft.text.Text;
-import net.minecraft.text.Texts;
-
 import java.util.List;
-
-import static net.fabricmc.fabric.api.client.command.v2.ClientCommandManager.argument;
-import static net.kinchanramen.github.chatdeletemod.client.ChatDeleteModClient.config;
 
 public class ChatDeleteModCommand {
     private static final SuggestionProvider<FabricClientCommandSource> CENSORED_WORDS_SUGGESTION_PROVIDER = (context, builder) -> {
@@ -50,7 +39,7 @@ public class ChatDeleteModCommand {
         List<String> words = ChatDeleteModConfig.getCensoredWords();
         if (!words.contains(word)) {
             words.add(word);
-            config.setCensoredWords(words);
+            ChatDeleteModConfig.setCensoredWords(words);
             source.sendFeedback(Text.literal("Added censored word: " + word));
         } else {
             source.sendFeedback(Text.literal("Word already in censored list: " + word));
@@ -61,7 +50,7 @@ public class ChatDeleteModCommand {
         List<String> words = ChatDeleteModConfig.getCensoredWords();
         if (words.contains(word)) {
             words.remove(word);
-            config.setCensoredWords(words);
+            ChatDeleteModConfig.setCensoredWords(words);
             source.sendFeedback(Text.literal("Removed censored word: " + word));
         } else {
             source.sendFeedback(Text.literal("Word not found in censored list: " + word));
@@ -89,10 +78,5 @@ public class ChatDeleteModCommand {
             source.sendFeedback(Text.literal("Censored words: " + String.join(", ", words)));
         }
         return 1;
-    }
-
-    private static int DeleteMessageregister(CommandContext<FabricClientCommandSource> Context, Text value) {
-        Context.getSource().sendFeedback(value);
-        return 0;
     }
 }

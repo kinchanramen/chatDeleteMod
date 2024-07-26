@@ -17,6 +17,9 @@
     ],
     "main": [
       "net.kinchanramen.github.chatdeletemod.ChatDeleteMod"
+    ],
+    "modmenu": [
+      "net.kinchanramen.github.chatdeletemod.ModMenu.ModMenuIntegration"
     ]
   },
   "mixins": [

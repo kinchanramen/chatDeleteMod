@@ -13,7 +13,7 @@ public class ChatDeleteModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         config=new ChatDeleteModConfig();
-        config.loadConfig();
+        ChatDeleteModConfig.loadConfig();
         ClientCommandRegistrationCallback.EVENT.register(this::registerCommands);
     }
     public void registerCommands(CommandDispatcher<FabricClientCommandSource> dispatcher, CommandRegistryAccess commandRegistryAccess){
