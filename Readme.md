@@ -31,7 +31,8 @@ Mod Menu経由でconfigを開ける。
 ## ライセンス
 このModは[MITライセンス](https://github.com/kinchanramen/chatDeleteMod/blob/master/LICENSE)の下で公開されています。
 
-## 連絡先
+## Special Thx
+- このmodを使ってくれるあなた
 - 開発者: [Kinchan_Ramen](https://github.com/kinchanramen)
 
 ## クレジット
